@@ -1,48 +1,36 @@
-// a code to find all the triplets in an array that sum to a given value
-// Time Complexity: O(n^2)
-// Space Complexity: O(1)
-
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include<iostream>
 using namespace std;
 
-void findTriplets(vector<int> &arr, int sum)
+int main ()
 {
-    sort(arr.begin(), arr.end());
-    int n = arr.size();
+    int n;
+    cout << "Enter number of elements in an array: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Enter elements in an array: ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    int targetSum;
+    cout << "Enter target sum: ";
+    cin >> targetSum;
 
     for (int i = 0; i < n - 2; i++)
     {
-        int l = i + 1;
-        int r = n - 1;
-
-        while (l < r)
+        for (int j = i + 1; j < n - 1; j++)
         {
-            if (arr[i] + arr[l] + arr[r] == sum)
+            for (int k = j + 1; k < n; k++)
             {
-                cout << arr[i] << " " << arr[l] << " " << arr[r] << endl;
-                l++;
-                r--;
-            }
-            else if (arr[i] + arr[l] + arr[r] < sum)
-            {
-                l++;
-            }
-            else
-            {
-                r--;
+                if (arr[i] + arr[j] + arr[k] == targetSum)
+                {
+                    cout << "Triplet is: " << arr[i] << ", " << arr[j] << ", " << arr[k] << endl;
+                }
             }
         }
     }
-}
-
-int main()
-{
-    vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int sum = 15;
-
-    findTriplets(arr, sum);
 
     return 0;
 }
