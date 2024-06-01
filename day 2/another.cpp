@@ -1,5 +1,5 @@
 #include <iostream>
-#define f(x) x *x + 4 * x + 4
+#define f(x) x * x + 4 * x + 4
 
 using namespace std;
 
