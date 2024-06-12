@@ -31,7 +31,7 @@ public:
         cout << "Roll: " << roll << endl;
     }
 
-    friend void accesas(student &s1, student &s2, student &s3, employee &e1, employee &e2);
+    friend void accessed(student &s1, student &s2, student &s3, employee &e1, employee &e2);
 };
 
 class employee
@@ -58,10 +58,10 @@ public:
         cout << "Salary: " << salary << endl;
     }
 
-    friend void accesas(student &s1, student &s2, student &s3, employee &e1, employee &e2);
+    friend void accessed(student &s1, student &s2, student &s3, employee &e1, employee &e2);
 };
 
-void accesas(student &s1, student &s2, student &s3, employee &e1, employee &e2)
+void accessed(student &s1, student &s2, student &s3, employee &e1, employee &e2)
 {
     cout << s1.name << endl;
     cout << s2.name << endl;
@@ -87,10 +87,10 @@ int main()
 
     cout << endl;
 
-    employee e2("Ramesh", 100000);
+    employee e2("Rameesh", 1000000);
 
     cout << "Calling friend function....\n";
-    accesas(s1, s2, s3, e1, e2);
+    accessed(s1, s2, s3, e1, e2);
 
     return 0;
 }
